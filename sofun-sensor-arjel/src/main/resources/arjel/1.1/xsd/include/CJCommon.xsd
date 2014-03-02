@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:include schemaLocation="Common.xsd" />
+	<xs:simpleType name="agrement">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="PS" />
+			<xs:enumeration value="PH" />
+			<xs:enumeration value="JC" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="departement">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="2" />
+			<xs:maxLength value="3" />
+			<xs:pattern value="[0-9][0-9AB][0-9]?" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="civil">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="M" />
+			<xs:enumeration value="Mme" />
+			<xs:enumeration value="Mlle" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="postal">
+		<xs:restriction base="xs:string">
+			<xs:length value="5" />
+			<xs:pattern value="(([0-8][0-9AB])|(9[0-8AB]))[0-9]{3}" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="periode">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="H" />
+			<xs:enumeration value="J" />
+			<xs:enumeration value="S" />
+			<xs:enumeration value="M" />
+			<xs:enumeration value="A" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="TypAg" type="agrement" />
+	<xs:element name="DateEffective" type="date-aammjjhhmm" />
+	<xs:element name="DateModif" type="date-aammjjhhmm" />
+	<xs:element name="DateFin" type="date-aammjj" />
+	<xs:element name="Duree" type="xs:nonNegativeInteger" />
+	<xs:element name="Interdiction">
+		<xs:complexType>
+			<xs:sequence minOccurs="1" maxOccurs="1">
+				<xs:element minOccurs="1" maxOccurs="1" ref="DateModif" />
+				<xs:choice minOccurs="1" maxOccurs="1">
+					<xs:element minOccurs="0" maxOccurs="1" ref="Duree" />
+					<xs:element minOccurs="0" maxOccurs="1" ref="DateFin" />
+				</xs:choice>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Moyen" type="string-64" />
+	<xs:element name="LotN">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="1" maxOccurs="1" ref="Nom" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="Valeur" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Valeur" type="nonNegativeDecimal" />
+	<xs:element name="Prenoms" type="string-256" />
+	<xs:element name="Civilite" type="civil" />
+	<xs:element name="DateN" type="date-aaaammjj" />
+	<xs:element name="VilleN" type="string-64" />
+	<xs:element name="DptN" type="departement" />
+	<xs:element name="PaysN" type="string-64" />
+	<xs:element name="Ad" type="string-256" />
+	<xs:element name="CP" type="postal" />
+	<xs:element name="Ville" type="string-64" />
+	<xs:element name="Pays" type="string-64" />
+	<xs:element name="TelFixe" type="string-32" />
+	<xs:element name="TelMob" type="string-32" />
+	<xs:element name="Email" type="string-64" />
+	<xs:element name="MiseMax">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="1" maxOccurs="1" ref="MontantMM" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="PeriodeMM" />
+				<xs:element minOccurs="0" maxOccurs="1" ref="TypeJeuMM" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DepotMax">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="1" maxOccurs="1" ref="MontantMM" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="PeriodeMM" />
+				<xs:element minOccurs="0" maxOccurs="1" ref="TypeJeuMM" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="MontantMM" type="nonNegativeDecimal" />
+	<xs:element name="PeriodeMM" type="periode" />
+	<xs:element name="TypeJeuMM" type="string-256" />
+	<xs:element name="Ident">
+		<xs:complexType>
+			<xs:sequence />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Adresse">
+		<xs:complexType>
+			<xs:sequence />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Contact">
+		<xs:complexType>
+			<xs:sequence />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Moderateur">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="1" maxOccurs="1" ref="LibelModer" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="SeuilModer" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="PeriodeModer" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="TypeJeuModer" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PeriodeModer" type="periode" />
+	<xs:element name="LibelModer" type="string-1024" />
+	<xs:element name="TypeJeuModer" type="string-256" />
+	<xs:element name="SeuilModer" type="nonNegativeDecimal" />
+	<xs:element name="MoyenPaiement" type="string-64" />
+	<xs:element name="CauseRefus" type="string-1024" />
+	<xs:element name="Max" type="nonNegativeDecimal" />
+	<xs:element name="Min" type="nonNegativeDecimal" />
+	<xs:element name="Compte">
+		<xs:complexType>
+			<xs:sequence minOccurs="1" maxOccurs="1">
+				<xs:element minOccurs="0" maxOccurs="1" ref="Min" />
+				<xs:element minOccurs="0" maxOccurs="1" ref="Max" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

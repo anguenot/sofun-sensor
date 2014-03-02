@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:include schemaLocation="Common.xsd" />
+	<xs:simpleType name="combinatoire">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="S" />
+			<xs:enumeration value="C" />
+			<xs:enumeration value="XY" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Xxy">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="1" />
+			<xs:maxInclusive value="64" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="X" type="Xxy" />
+	<xs:element name="Cote">
+		<xs:simpleType>
+			<xs:restriction base="nonNegativeDecimal">
+				<xs:minInclusive value="1" />
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="Combi" type="combinatoire" />
+	<xs:element name="No" type="xs:nonNegativeInteger" />
+	<xs:element name="Lig">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="1" maxOccurs="1" ref="No" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="DateHeure" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="Tech" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="Clair" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="Type" />
+				<xs:element minOccurs="1" maxOccurs="64" ref="Pari" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Pari">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="1" maxOccurs="1" ref="Choix" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="Cote" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DescPari">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="1" maxOccurs="1" ref="Combi" />
+				<xs:element minOccurs="0" maxOccurs="1" ref="X" />
+				<xs:element minOccurs="1" maxOccurs="64" ref="Lig" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Desc">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="1" maxOccurs="1" ref="Type" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="Nom" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="DateHeure" />
+				<xs:element minOccurs="1" maxOccurs="64" ref="Choix" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BonusAvantMise" type="nonNegativeDecimal" />
+	<xs:element name="Mise" type="nonNegativeDecimal" />
+	<xs:element name="BonusApresMise" type="nonNegativeDecimal" />
+	<xs:element name="SoldeAvantMise" type="nonNegativeDecimal" />
+	<xs:element name="SoldeApresMise" type="nonNegativeDecimal" />
+	<xs:element name="Clair" type="string-256" />
+	<xs:element name="Type" type="string-64" />
+	<xs:element name="Choix" type="string-64" />
+</xs:schema>

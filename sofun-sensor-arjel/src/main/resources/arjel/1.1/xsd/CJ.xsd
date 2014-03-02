@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:include schemaLocation="./include/CJCommon.xsd" />
+	<xs:element name="OUVINFOPERSO">
+		<xs:complexType>
+			<xs:sequence minOccurs="1" maxOccurs="1">
+				<!-- Entete -->
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDOper" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="DateEvt" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDEvt" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDJoueur" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDSession" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IPJoueur" />
+				<xs:element minOccurs="0" maxOccurs="1" ref="IDCoffre" />
+
+				<!-- Corps -->
+				<xs:element minOccurs="1" maxOccurs="3" ref="TypAg" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="Login" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="Pseudo" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="Nom" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="Prenoms" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="Civilite" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="DateN" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="VilleN" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="DptN" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="PaysN" />
+				<xs:element minOccurs="1" maxOccurs="8" ref="Ad" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="CP" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="Ville" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="Pays" />
+				<xs:element minOccurs="0" maxOccurs="1" ref="TelFixe" />
+				<xs:element minOccurs="0" maxOccurs="1" ref="TelMob" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="Email" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="PREFCPTE">
+		<xs:complexType>
+			<xs:sequence minOccurs="1" maxOccurs="1">
+				<!-- Entete -->
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDOper" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="DateEvt" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDEvt" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDJoueur" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDSession" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IPJoueur" />
+				<xs:element minOccurs="0" maxOccurs="1" ref="IDCoffre" />
+
+				<!-- Corps -->
+				<xs:element minOccurs="1" maxOccurs="3" ref="TypAg" />
+				<xs:element minOccurs="0" maxOccurs="1" ref="Compte" />
+				<xs:element minOccurs="0" maxOccurs="64" ref="MiseMax" />
+				<xs:element minOccurs="0" maxOccurs="64" ref="DepotMax" />
+				<xs:element minOccurs="0" maxOccurs="64" ref="Moderateur" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="MODIFINFOPERSO">
+		<xs:complexType>
+			<xs:sequence minOccurs="1" maxOccurs="1">
+				<!-- Entete -->
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDOper" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="DateEvt" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDEvt" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDJoueur" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDSession" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IPJoueur" />
+				<xs:element minOccurs="0" maxOccurs="1" ref="IDCoffre" />
+				
+				<!-- Corps -->
+				<xs:element minOccurs="1" maxOccurs="3" ref="TypAg" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="Pseudo" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="Nom" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="Prenoms" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="Civilite" />
+				<xs:element minOccurs="1" maxOccurs="8" ref="Ad" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="CP" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="Ville" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="Pays" />
+				<xs:element minOccurs="0" maxOccurs="1" ref="TelFixe" />
+				<xs:element minOccurs="0" maxOccurs="1" ref="TelMob" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="Email" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="OKCONDGENE">
+		<xs:complexType>
+			<xs:sequence minOccurs="1" maxOccurs="1">
+				<!-- Entete -->
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDOper" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="DateEvt" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDEvt" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDJoueur" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDSession" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IPJoueur" />
+				<xs:element minOccurs="0" maxOccurs="1" ref="IDCoffre" />
+				
+				<!-- Corps -->
+				<xs:element minOccurs="1" maxOccurs="3" ref="TypAg" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="OUVOKCONFIRME">
+		<xs:complexType>
+			<xs:sequence minOccurs="1" maxOccurs="1">
+				<!-- Entete -->
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDOper" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="DateEvt" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDEvt" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDJoueur" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDSession" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IPJoueur" />
+				<xs:element minOccurs="0" maxOccurs="1" ref="IDCoffre" />
+				
+				<!-- Corps -->
+				<xs:element minOccurs="1" maxOccurs="3" ref="TypAg" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="ACCESREFUSE">
+		<xs:complexType>
+			<xs:sequence minOccurs="1" maxOccurs="1">
+				<!-- Entete -->
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDOper" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="DateEvt" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDEvt" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDJoueur" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDSession" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IPJoueur" />
+				<xs:element minOccurs="0" maxOccurs="1" ref="IDCoffre" />
+				
+				<!-- Corps -->
+				<xs:element minOccurs="1" maxOccurs="1" ref="TypAg" />
+				<xs:element minOccurs="0" maxOccurs="1" name="CauseRefus" type="string-1024" />
+				<xs:element minOccurs="0" maxOccurs="1" name="TypeRefus">
+					<xs:simpleType>
+						<xs:restriction base="string-1024">
+							<xs:enumeration value="DelaiInterdit" />
+							<xs:enumeration value="RejetIdentite" />
+							<xs:enumeration value="Interdit" />
+							<xs:enumeration value="AutoInterdit" />
+							<xs:enumeration value="OpVerrouile" />
+							<xs:enumeration value="Verrouille" />
+							<xs:enumeration value="Cloture" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="AUTOINTERDICTION">
+		<xs:complexType>
+			<xs:sequence minOccurs="1" maxOccurs="1">
+				<!-- Entete -->
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDOper" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="DateEvt" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDEvt" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDJoueur" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDSession" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IPJoueur" />
+				<xs:element minOccurs="0" maxOccurs="1" ref="IDCoffre" />
+
+				<!-- Corps -->
+				<xs:element minOccurs="1" maxOccurs="1" ref="TypAg" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="DateModif" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="Duree" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="CLOTUREDEM">
+		<xs:complexType>
+			<xs:sequence minOccurs="1" maxOccurs="1">
+				<!-- Entete -->
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDOper" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="DateEvt" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDEvt" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDJoueur" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDSession" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IPJoueur" />
+				<xs:element minOccurs="0" maxOccurs="1" ref="IDCoffre" />
+				
+				<!-- Corps -->
+				<xs:element minOccurs="1" maxOccurs="3" ref="TypAg" />
+				<xs:element name="SoldeClos" type="nonNegativeDecimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="CPTEALIM">
+		<xs:complexType>
+			<xs:sequence minOccurs="1" maxOccurs="1">
+				<!-- Entete -->
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDOper" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="DateEvt" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDEvt" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDJoueur" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDSession" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IPJoueur" />
+				<xs:element minOccurs="0" maxOccurs="1" ref="IDCoffre" />
+				
+				<!-- Corps -->
+				<xs:element minOccurs="1" maxOccurs="3" ref="TypAg" />
+				<xs:element minOccurs="0" maxOccurs="1" name="DateDemande" type="date-aammjjhhmm" />
+				<xs:element minOccurs="0" maxOccurs="1" name="DateEffective" type="date-aammjjhhmm" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="SoldeAvant" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="SoldeMouvement" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="SoldeApres" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="MoyenPaiement" />
+				<xs:element minOccurs="1" maxOccurs="1" name="TypeMoyenPaiement">
+					<xs:simpleType>
+						<xs:restriction base="string-32">
+							<xs:enumeration value="CarteBancaire" />
+							<xs:enumeration value="Virement" />
+							<xs:enumeration value="Intermediaire" />
+							<xs:enumeration value="MonnaieElectronique" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="CPTERETRAIT">
+		<xs:complexType>
+			<xs:sequence minOccurs="1" maxOccurs="1">
+				<!-- Entete -->
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDOper" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="DateEvt" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDEvt" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDJoueur" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDSession" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IPJoueur" />
+				<xs:element minOccurs="0" maxOccurs="1" ref="IDCoffre" />
+
+				<!-- Corps -->
+				<xs:element minOccurs="1" maxOccurs="3" ref="TypAg" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="SoldeAvant" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="SoldeMouvement" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="SoldeApres" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="CPTEABOND">
+		<xs:complexType>
+			<xs:sequence minOccurs="1" maxOccurs="1">
+				<!-- Entete -->
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDOper" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="DateEvt" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDEvt" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDJoueur" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDSession" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IPJoueur" />
+				<xs:element minOccurs="0" maxOccurs="1" ref="IDCoffre" />
+				
+				<!-- Corps -->
+				<xs:element minOccurs="1" maxOccurs="1" ref="TypAg" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="SoldeAvant" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="MontAbond" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="SoldeApres" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="Info" />
+				<xs:element minOccurs="1" maxOccurs="1" name="TypeAbondement">
+					<xs:simpleType>
+						<xs:restriction base="string-32">
+							<xs:enumeration value="Ouverture" />
+							<xs:enumeration value="RakeBack" />
+							<xs:enumeration value="HautFait" />
+							<xs:enumeration value="Code" />
+							<xs:enumeration value="Offre" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="CPTEALIMOPE">
+		<xs:complexType>
+			<xs:sequence minOccurs="1" maxOccurs="1">
+				<!-- Entete -->
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDOper" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="DateEvt" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDEvt" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDJoueur" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDSession" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IPJoueur" />
+				<xs:element minOccurs="0" maxOccurs="1" ref="IDCoffre" />
+				
+				<!-- Corps -->
+				<xs:element minOccurs="1" maxOccurs="1" ref="TypAg" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="BonusAvant" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="BonusMouvement" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="BonusApres" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="BonusNom" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="LOTNATURE">
+		<xs:complexType>
+			<xs:sequence minOccurs="1" maxOccurs="1">
+				<!-- Entete -->
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDOper" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="DateEvt" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDEvt" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDJoueur" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDSession" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IPJoueur" />
+				<xs:element minOccurs="0" maxOccurs="1" ref="IDCoffre" />
+								
+				<!-- Corps -->
+				<xs:element minOccurs="1" maxOccurs="1" ref="TypAg" />
+				<xs:element minOccurs="1" maxOccurs="64" ref="LotN" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

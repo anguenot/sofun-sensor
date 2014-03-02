@@ -1,0 +1,43 @@
+/*
+ * Copyright (c)  Sofun Gaming SAS.
+ * Copyright (c)  Julien Anguenot <julien@anguenot.org>
+ * Copyright (c)  Julien De Preaumont <juliendepreaumont@gmail.com>
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     Julien Anguenot <julien@anguenot.org> - initial API and implementation
+*/
+
+package org.sofun.sensor.arjel.api.event;
+
+/**
+ * Event type CPTERETRAIT.
+ * 
+ * @author <a href="mailto:julien@anguenot.org">Julien Anguenot</a>
+ * 
+ */
+public interface EventCPTERETRAIT extends XMLTrace {
+
+    static final String TYPE = "CPTERETRAIT";
+
+    String getFieldTypAg();
+
+    void setFieldTypAg(String fieldTypAg);
+
+    String getFieldSoldeAvant();
+
+    void setFieldSoldeAvant(String fieldSoldeAvant);
+
+    String getFieldSoldeMouvement();
+
+    void setFieldSoldeMouvement(String fieldSoldeMouvement);
+
+    String getFieldSoldeApres();
+
+    void setFieldSoldeApres(String fieldSoldeApres);
+
+}

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:include schemaLocation="Common.xsd" />
+	<xs:simpleType name="carte">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="(([1-9]|10)|(V|D|R))(Pi|Co|Ca|Tr)" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="DateMise" type="date-aammjjhhmmss" />
+	<xs:element name="IDPartie" type="string-256" />
+	<xs:element name="IDTable" type="string-256" />
+	<xs:element name="JSiege">
+		<xs:simpleType>
+			<xs:restriction base="xs:nonNegativeInteger">
+				<xs:minInclusive value="1" />
+				<xs:maxInclusive value="12" />
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="TotalMise" type="nonNegativeDecimal" />
+	<xs:element name="MiseOrdre" type="xs:nonNegativeInteger" />
+	<xs:element name="JMontant" type="nonNegativeDecimal" />
+	<xs:element name="TabCarte" type="carte" />
+	<xs:element name="CarteJoueur" type="carte" />
+	<xs:element name="DateEnchere" type="date-aammjjhhmmss" />
+	<xs:element name="DescTournoi">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="1" maxOccurs="1" name="DateTournoi" type="date-aammjjhhmmss" />
+				<xs:element minOccurs="1" maxOccurs="1" name="TournoiNbJoueurQualification" type="xs:nonNegativeInteger" />
+				<xs:element minOccurs="0" maxOccurs="1" name="TournoiNbJeton" type="xs:nonNegativeInteger" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Joueur">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDJoueur" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="JSiege" />
+				<xs:element minOccurs="1" maxOccurs="1" name="JCave" />
+				<xs:element minOccurs="0" maxOccurs="1" name="PetiteBlind" type="nonNegativeDecimal" />
+				<xs:element minOccurs="0" maxOccurs="1" name="GrosseBlind" type="nonNegativeDecimal" />
+				<xs:element minOccurs="0" name="Ante" type="nonNegativeDecimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Main">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" maxOccurs="7" name="carte" type="carte" />
+				<xs:element minOccurs="0" maxOccurs="5" name="MainMax" type="carte" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="JSiege" />
+				<xs:element minOccurs="0" maxOccurs="1" ref="TotalMise" />
+				<xs:choice minOccurs="1" maxOccurs="1">
+					<xs:element name="Gain" type="nonNegativeDecimal" />
+					<xs:element name="Perte" type="nonNegativeDecimal" />
+				</xs:choice>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Mise">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" maxOccurs="1" ref="DateMise" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="MiseOrdre" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="JSiege" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="JMontant" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Suivre">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" maxOccurs="1" ref="DateMise" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="MiseOrdre" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="JSiege" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="JMontant" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SeCouche">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" maxOccurs="1" ref="DateMise" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="MiseOrdre" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="JSiege" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Relance">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" maxOccurs="1" ref="DateMise" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="MiseOrdre" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="JSiege" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="JMontant" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Parole">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" maxOccurs="1" ref="DateMise" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="MiseOrdre" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="JSiege" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Tapis">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" maxOccurs="1" ref="DateMise" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="MiseOrdre" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="JSiege" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="JMontant" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PreFlop">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="1" maxOccurs="1" ref="DateEnchere" />
+				<xs:element minOccurs="1" maxOccurs="4" ref="CarteJoueur" />
+				<xs:choice minOccurs="0" maxOccurs="unbounded">
+					<xs:element ref="Suivre" />
+					<xs:element minOccurs="1" maxOccurs="1" ref="Parole" />
+					<xs:element minOccurs="1" maxOccurs="1" ref="Tapis" />
+					<xs:element minOccurs="1" maxOccurs="1" ref="Relance" />
+					<xs:element minOccurs="1" maxOccurs="1" ref="SeCouche" />
+					<xs:element minOccurs="1" maxOccurs="1" ref="Mise" />
+				</xs:choice>
+				<xs:element minOccurs="1" maxOccurs="1" ref="TotalMise" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Flop">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="1" maxOccurs="1" ref="DateEnchere" />
+				<xs:element minOccurs="3" maxOccurs="3" ref="TabCarte" />
+				<xs:choice minOccurs="0" maxOccurs="unbounded">
+					<xs:element ref="Suivre" />
+					<xs:element minOccurs="1" maxOccurs="1" ref="Relance" />
+					<xs:element minOccurs="1" maxOccurs="1" ref="Tapis" />
+					<xs:element minOccurs="1" maxOccurs="1" ref="Parole" />
+					<xs:element minOccurs="1" maxOccurs="1" ref="SeCouche" />
+					<xs:element minOccurs="1" maxOccurs="1" ref="Mise" />
+				</xs:choice>
+				<xs:element minOccurs="1" maxOccurs="1" ref="TotalMise" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Tournant">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="1" maxOccurs="1" ref="DateEnchere" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="TabCarte" />
+				<xs:choice minOccurs="0" maxOccurs="unbounded">
+					<xs:element ref="Suivre" />
+					<xs:element minOccurs="1" maxOccurs="1" ref="Relance" />
+					<xs:element minOccurs="1" maxOccurs="1" ref="Tapis" />
+					<xs:element minOccurs="1" maxOccurs="1" ref="Parole" />
+					<xs:element minOccurs="1" maxOccurs="1" ref="SeCouche" />
+					<xs:element minOccurs="1" maxOccurs="1" ref="Mise" />
+				</xs:choice>
+				<xs:element minOccurs="1" maxOccurs="1" ref="TotalMise" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Riviere">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="DateEnchere" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="TabCarte" />
+				<xs:choice minOccurs="0" maxOccurs="unbounded">
+					<xs:element ref="Suivre" />
+					<xs:element minOccurs="1" maxOccurs="1" ref="Relance" />
+					<xs:element minOccurs="1" maxOccurs="1" ref="Tapis" />
+					<xs:element minOccurs="1" maxOccurs="1" ref="Parole" />
+					<xs:element minOccurs="1" maxOccurs="1" ref="SeCouche" />
+					<xs:element minOccurs="1" maxOccurs="1" ref="Mise" />
+				</xs:choice>
+				<xs:element minOccurs="1" maxOccurs="1" ref="TotalMise" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Decouverte">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="1" maxOccurs="1" name="DateEnchere" type="date-aammjjhhmmss" />
+				<xs:element minOccurs="0" maxOccurs="12" ref="Main" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SoldeApresRevers" type="nonNegativeDecimal" />
+	<xs:element name="CaveRevers" type="nonNegativeDecimal" />
+	<xs:element name="SoldeAvantRevers" type="nonNegativeDecimal" />
+</xs:schema>

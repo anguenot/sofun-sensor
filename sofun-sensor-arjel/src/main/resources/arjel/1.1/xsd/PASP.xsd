@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:include schemaLocation="./include/PACommon.xsd" />
+
+	<xs:element name="PASPMISE">
+		<xs:complexType>
+			<xs:sequence minOccurs="1" maxOccurs="1">
+				<!-- Entete -->
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDOper" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="DateEvt" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDEvt" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDJoueur" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDSession" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IPJoueur" />
+				<xs:element minOccurs="0" maxOccurs="1" ref="IDCoffre" />
+				
+				<!-- Corps -->
+				<xs:element minOccurs="1" maxOccurs="1" ref="Tech" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="Clair" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="DescPari" />
+				<xs:element minOccurs="0" maxOccurs="1" ref="SoldeAvantMise" />
+				<xs:element minOccurs="0" maxOccurs="1" ref="Mise" />
+				<xs:element minOccurs="0" maxOccurs="1" ref="SoldeApresMise" />
+				<xs:element minOccurs="0" maxOccurs="1" ref="MiseAbond" />
+				<xs:element minOccurs="0" maxOccurs="1" ref="BonusAvantMise" />
+				<xs:element minOccurs="0" maxOccurs="1" ref="BonusMouvement" />
+				<xs:element minOccurs="0" maxOccurs="1" ref="BonusApresMise" />
+				<xs:element minOccurs="0" maxOccurs="1" ref="BonusNom" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="PASPANNUL">
+		<xs:complexType>
+			<xs:sequence minOccurs="1" maxOccurs="1">
+				<!-- Entete -->
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDOper" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="DateEvt" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDEvt" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDJoueur" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDSession" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IPJoueur" />
+				<xs:element minOccurs="0" maxOccurs="1" ref="IDCoffre" />
+				
+				<!-- Corps -->
+				<xs:element minOccurs="1" maxOccurs="1" ref="Tech" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="Clair" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="DateHeure" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="SoldeAvantRembours" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="MontantRembours" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="SoldeApresRembours" />
+				<xs:element minOccurs="0" maxOccurs="1" ref="Info" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="PASPGAIN">
+		<xs:complexType>
+			<xs:sequence minOccurs="1" maxOccurs="1">
+				<!-- Entete -->
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDOper" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="DateEvt" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDEvt" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDJoueur" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IDSession" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="IPJoueur" />
+				<xs:element minOccurs="0" maxOccurs="1" ref="IDCoffre" />
+
+				<!-- Corps -->
+				<xs:element minOccurs="1" maxOccurs="1" ref="Tech" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="Clair" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="DateHeure" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="SoldeAvantGain" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="Gain" />
+				<xs:element minOccurs="1" maxOccurs="1" ref="SoldeApresGain" />
+				<xs:element minOccurs="0" maxOccurs="1" ref="GainAbond" />
+				<xs:element minOccurs="0" maxOccurs="1" ref="Info" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

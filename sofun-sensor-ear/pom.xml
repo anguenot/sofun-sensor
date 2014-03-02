@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c)  Sofun Gaming SAS.
+  Copyright (c)  Julien Anguenot <julien@anguenot.org>
+  Copyright (c)  Julien De Preaumont <juliendepreaumont@gmail.com>
+  
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the Eclipse Public License v1.0
+  which accompanies this distribution, and is available at
+  http://www.eclipse.org/legal/epl-v10.html
+  
+  Contributors:
+      Julien Anguenot <julien@anguenot.org> - initial API and implementation
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>sofun-sensor-parent</artifactId>
+		<groupId>org.sofun.sensor</groupId>
+		<version>0.3-SNAPSHOT</version>
+	</parent>
+	<artifactId>sofun-sensor-ear</artifactId>
+	<packaging>ear</packaging>
+	<name>Sofun Sensor EAR</name>
+	<dependencies>
+		<dependency>
+			<groupId>org.sofun.sensor</groupId>
+			<artifactId>sofun-sensor-war</artifactId>
+			<version>${sofun.sensor.version}</version><!--$NO-MVN-MAN-VER$ -->
+			<type>war</type>
+		</dependency>
+		<dependency>
+			<groupId>org.sofun.sensor</groupId>
+			<artifactId>sofun-sensor-core</artifactId>
+			<version>${sofun.sensor.version}</version><!--$NO-MVN-MAN-VER$ -->
+			<type>ejb</type>
+		</dependency>
+		<dependency>
+			<groupId>org.sofun.sensor</groupId>
+			<artifactId>sofun-sensor-arjel</artifactId>
+			<version>${sofun.sensor.version}</version><!--$NO-MVN-MAN-VER$ -->
+			<type>ejb</type>
+		</dependency>
+		<dependency>
+			<groupId>org.sofun.sensor</groupId>
+			<artifactId>sofun-sensor-cecurity</artifactId>
+			<version>${sofun.sensor.version}</version><!--$NO-MVN-MAN-VER$ -->
+			<type>ejb</type>
+		</dependency>
+		<dependency>
+			<groupId>org.sofun.sensor</groupId>
+			<artifactId>sofun-sensor-betkup</artifactId>
+			<version>${sofun.sensor.version}</version><!--$NO-MVN-MAN-VER$ -->
+			<type>ejb</type>
+		</dependency>
+		<dependency>
+            <groupId>org.sofun.sensor</groupId>
+            <artifactId>sofun-sensor-storage</artifactId>
+            <version>${sofun.sensor.version}</version><!--$NO-MVN-MAN-VER$ -->
+            <type>ejb</type>
+        </dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ear-plugin</artifactId>
+				<version>2.5</version>
+				<configuration>
+					<defaultJavaBundleDir>/lib/</defaultJavaBundleDir>
+					<jboss>
+						<version>5</version>
+						<library-directory>/lib</library-directory>
+						<loader-repository>org.sofun:loader=sofun-sensor.ear</loader-repository>
+						<loader-repository-config>java2ParentDelegation=true</loader-repository-config>
+					</jboss>
+					<modules>
+						<webModule>
+							<groupId>org.sofun.sensor</groupId>
+							<artifactId>sofun-sensor-war</artifactId>
+							<unpack>true</unpack>
+							<contextRoot>sofun-sensor</contextRoot>
+							<bundleFileName>sofun-sensor.war</bundleFileName>
+						</webModule>
+						<ejbModule>
+							<groupId>org.sofun.sensor</groupId>
+							<artifactId>sofun-sensor-core</artifactId>
+							<bundleFileName>sofun-sensor-core.jar</bundleFileName>
+						</ejbModule>
+						<ejbModule>
+							<groupId>org.sofun.sensor</groupId>
+							<artifactId>sofun-sensor-arjel</artifactId>
+							<bundleFileName>sofun-sensor-arjel.jar</bundleFileName>
+						</ejbModule>
+						<ejbModule>
+							<groupId>org.sofun.sensor</groupId>
+							<artifactId>sofun-sensor-cecurity</artifactId>
+							<bundleFileName>sofun-sensor-cecurity.jar</bundleFileName>
+						</ejbModule>
+						<ejbModule>
+							<groupId>org.sofun.sensor</groupId>
+							<artifactId>sofun-sensor-betkup</artifactId>
+							<bundleFileName>sofun-sensor-betkup.jar</bundleFileName>
+						</ejbModule>
+						<ejbModule>
+                            <groupId>org.sofun.sensor</groupId>
+                            <artifactId>sofun-sensor-storage</artifactId>
+                            <bundleFileName>sofun-sensor-storage.jar</bundleFileName>
+                        </ejbModule>
+					</modules>
+				</configuration>
+			</plugin>
+		</plugins>
+		<finalName>sofun-sensor.ear</finalName>
+		<pluginManagement>
+			<plugins>
+				<!-- Ignore This plugin's configuration is used in m2e only. -->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId> org.apache.maven.plugins </groupId>
+										<artifactId> maven-ear-plugin </artifactId>
+										<versionRange>[2.4.2,)</versionRange>
+										<goals>
+											<goal>generate-application-xml</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+</project>

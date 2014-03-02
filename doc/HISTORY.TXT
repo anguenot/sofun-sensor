@@ -1,0 +1,83 @@
+#-------------------------------------------------------------------------------
+# Copyright (c)  Sofun Gaming SAS.
+# Copyright (c)  Julien Anguenot <julien@anguenot.org>
+# Copyright (c)  Julien De Preaumont <juliendepreaumont@gmail.com>
+# 
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Eclipse Public License v1.0
+# which accompanies this distribution, and is available at
+# http://www.eclipse.org/legal/epl-v10.html
+# 
+# Contributors:
+#     Julien Anguenot <julien@anguenot.org> - initial API and implementation
+#-------------------------------------------------------------------------------
+Release Notes - Sofun Sensor - Version 0.3
+
+** Bug
+
+    * [SENSOR-78] - Bug sur les événéments async de type PASPGAIN etc. 
+    
+Release Notes - Sofun Sensor - Version 0.2
+
+** Sub-task
+    * [SENSOR-37] - (OKCONDGENE) Acceptation conditions générales (idem ouverture de compte)
+
+** Bug
+    * [SENSOR-57] - CLOTUREDEM should only be called for gamling account
+    * [SENSOR-60] - Validation errors on email (encoding)
+    * [SENSOR-61] - Pseudo / Invalid char
+    * [SENSOR-62] - User IP of origin is 127.0.0.1
+    * [SENSOR-63] - Manque traces d'ouverture de comptes
+    * [SENSOR-64] - Archive purge warnings
+    * [SENSOR-67] - Upload limits & corrupted files for IDs
+    * [SENSOR-68] - Findbugs : MALICIOUS_CODE   MS_MUTABLE_ARRAY
+    * [SENSOR-69] - Findbugs: org.sofun.sensor.cecurity.impl.CecurityServiceImpl
+    * [SENSOR-70] - Findbugs: org.sofun.sensor.impl.session.SessionImpl
+    * [SENSOR-71] - Findbugs: org.sofun.sensor.web.ProxyServlet$CustomizedHostnameVerifier
+    * [SENSOR-72] - Findbugs: org.sofun.sensor.web.SensorHttpServletWrappedRequest
+    * [SENSOR-73] - NPE
+    * [SENSOR-75] - Bug credit
+
+
+** Improvement
+    * [SENSOR-66] - Add ERROR traces when missing XML elements at validation
+
+
+** Task
+    * [SENSOR-19] - Debugging
+    * [SENSOR-65] - Flush OUT sessions on regular basis
+    * [SENSOR-76] - ActiveMQ (Cecurity) client upgrade to 5.5.1
+
+Release Notes - Sofun Sensor - Version 0.1
+
+** Sub-task
+    * [SENSOR-22] - java.net.SocketException: Broken pipe
+    * [SENSOR-29] - (OUVINFOPERSO) Saisie du détail des informations personnelles (pseudo, identité et adresse client)
+    * [SENSOR-30] - (PREFCPTE) Saisie des préférences compte joueur
+    * [SENSOR-31] - (OKCONDGENE) Acceptation des conditions générales
+    * [SENSOR-34] - (MODIFINFOPERSO) Modification du détail des informations personnelles
+    * [SENSOR-35] - (PREFCPTE) Modification des préférences compte joueur (Idem ouverture de compte)
+    * [SENSOR-36] - (AUTOINTERDICTION) Auto interdiction du joueur
+    * [SENSOR-38] - (CLOTUREDEM) Demande de clôture de compte
+    * [SENSOR-39] - (CPTEALIM) Versement d'une somme sur le compte joueur (quelque soit le moyen utilisé)
+    * [SENSOR-41] - (CPTERETRAIT) Retrait d'une somme ou de la totalité du montant depuis le compte joueur vers son compte de paiement
+    * [SENSOR-47] - Entête XML
+    * [SENSOR-48] - Validation XSD
+    * [SENSOR-49] - Date de la donnée de jeu
+    * [SENSOR-50] - XML Translation
+    * [SENSOR-52] - Cecurity HA
+    * [SENSOR-53] - Message Response
+    * [SENSOR-54] - Archive response
+
+** Task
+    * [SENSOR-6] - Routing
+    * [SENSOR-12] - Request Extractor 
+    * [SENSOR-14] - Sensor ARJEL XML Generator 
+    * [SENSOR-15] - Sofun Sensor Game Plateforme  Connector 
+    * [SENSOR-16] - Sofun Sensor Cecurity Connector 
+    * [SENSOR-17] - Sofun Sensor Trace Storage
+    * [SENSOR-18] - Project Skel and fixtures
+    * [SENSOR-20] - Performances
+    * [SENSOR-21] - Proxy
+    * [SENSOR-28] - Déclaration de mise en service du frontal
+    * [SENSOR-51] - Betkup service
