@@ -19,5 +19,5 @@ decided to launch a sports gambling offering under French regulation (we never
 We stopped maintaining this code in December 2012 but you can always drop us an
 email if you have any questions:
 
-  * Julien Anguenot <julien@anguenot.org>
-  * Julien De Préaumont <juliendepreaumont@gmail.com>
+  * Julien Anguenot <julien at anguenot dot org>
+  * Julien De Préaumont <juliendepreaumont at gmail dot com>
